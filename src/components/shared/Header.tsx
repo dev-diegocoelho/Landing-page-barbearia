@@ -5,6 +5,14 @@ import { Button } from "./Button";
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    setIsMenuOpen(false);
+  };
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -26,13 +34,22 @@ const Header = () => {
         {/* Menu Desktop */}
         <nav className="hidden md:flex items-center">
           <ul className="flex items-center gap-8">
-            <li className="text-white hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer">
+            <li
+              className="text-white hover:text-yellow-primary transition-colors duration-300 cursor-pointer"
+              onClick={() => scrollToSection("hero")}
+            >
               Inicio
             </li>
-            <li className="text-white hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer">
+            <li
+              className="text-white hover:text-yellow-primary transition-colors duration-300 cursor-pointer"
+              onClick={() => scrollToSection("services")}
+            >
               Serviços
             </li>
-            <li className="text-white hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer">
+            <li
+              className="text-white hover:text-yellow-primary transition-colors duration-300 cursor-pointer"
+              onClick={() => scrollToSection("contact")}
+            >
               Contato
             </li>
             <li>
@@ -79,13 +96,22 @@ const Header = () => {
         }`}
       >
         <ul className="flex flex-col px-4 pb-4 gap-4 bg-[#0A0A0A]">
-          <li className="text-white hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer py-2 border-b border-[rgba(212,175,55,0.1)]">
+          <li
+            className="text-white hover:text-yellow-primary transition-colors duration-300 cursor-pointer py-2 border-b border-[rgba(212,175,55,0.1)]"
+            onClick={() => scrollToSection("hero")}
+          >
             Inicio
           </li>
-          <li className="text-white hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer py-2 border-b border-[rgba(212,175,55,0.1)]">
+          <li
+            className="text-white hover:text-yellow-primary transition-colors duration-300 cursor-pointer py-2 border-b border-[rgba(212,175,55,0.1)]"
+            onClick={() => scrollToSection("services")}
+          >
             Serviços
           </li>
-          <li className="text-white hover:text-[#D4AF37] transition-colors duration-300 cursor-pointer py-2 border-b border-[rgba(212,175,55,0.1)]">
+          <li
+            className="text-white hover:text-yellow-primary transition-colors duration-300 cursor-pointer py-2 border-b border-[rgba(212,175,55,0.1)]"
+            onClick={() => scrollToSection("contact")}
+          >
             Contato
           </li>
           <li className="pt-2">

@@ -12,7 +12,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="h-screen w-full flex items-center bg-[#0A0A0A] relative overflow-hidden"
+      className="h-screen w-full flex items-center bg-[#0A0A0A] relative overflow-hidden scroll-mt-24"
     >
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
